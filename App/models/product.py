@@ -29,6 +29,7 @@ class Product(db.Model):
             "unit_retail_price": round(self.unit_retail_price,2),
             "total_retail_price": round(self.total_retail_price,2),
             "image" : self.image,
-            "slug" : self.product_name.lower().replace(' ', '-')
+            "slug" : self.product_name.lower().replace(' ', '-'),
+            "orders": [OrderProduct.order.toDict() for OrderProduct in self.orders]
             # uncomment for all orders containing the product "orders": [OrderProduct.order.toDict() for OrderProduct in self.orders]
         }

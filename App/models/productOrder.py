@@ -21,3 +21,17 @@ class ProductOrder(db.Model):
     status = db.Column(db.Enum(OrderStatus))
     #prices may change, this is the price of the product at the time of order confirmation
     current_price = db.Column(db.Float, nullable = False)
+
+
+    def toDict(self):
+        return{
+            "id" : self.id,
+            "order.id" : self.order.id,
+            "product_id" : self.product_id,
+            "product" : self.product,
+            "order" : self.order,
+            "quantity" : self.quantity,
+            "status" : self.status,
+            "current_price" : self.current_price
+
+    }

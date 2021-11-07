@@ -30,7 +30,7 @@ def get_order_by_id(order_id):
     order = Order.query.filter(Order.id == order_id).first() 
     return order
 
-# get all orders belonging to user - used in profile dashboard to display
+# get all orders belonging to user - used in profile dashboard to display. Orders are also stored in the db
 # user orders
 def get_orders_by_user(email):
     print("getting user's orders")
@@ -38,6 +38,8 @@ def get_orders_by_user(email):
     list_of_orders = []
     if orders:
         list_of_orders = [o.toDict() for o in orders]
+    db.session.commit()
+    db.session.add(orders)
     return list_of_orders
 
 # search through orders - used by admin for - manage orders as 

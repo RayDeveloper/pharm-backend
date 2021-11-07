@@ -32,7 +32,11 @@ class User(db.Model):
         return{
             'first_name': self.first_name,
             'last_name': self.last_name,
+            'DOB': self.DOB,
             'email': self.email,
             'role': self.role,
-            'allergies': self.allergies
+            'allergies': self.allergies,
+            'orders': self.orders
+
+
         }

@@ -35,3 +35,4 @@ def delete_customer_by_email(email):
         db.session.commit()
         return True
     return False
+

@@ -12,9 +12,40 @@ total_sales_category
 )
 
 
-#get 20 products based on page
+#get the monthly sales
 @product_views.route('/products', methods=["GET"])
-def display_event():
-    page = request.args.get('page')
-    prodList = get_products_page(page)
-    return jsonify(prodList)
+@jwt_required()
+def display_monthly_sales():
+    user_date = request.args.get('date')
+    salesList = get_monthly_sales(date)
+    return jsonify(salesList)
+
+#get the monthly income
+@product_views.route('/products', methods=["GET"])
+@jwt_required()
+def display_monthly_income():
+    user_date = request.args.get('date')
+    incomeList = get_monthly_income(date)
+    return jsonify(incomeList)
+
+#get the highest selling product
+@product_views.route('/products', methods=["GET"])
+@jwt_required()
+def display_highest_selling_product():
+    high_product = highest_selling_product()
+    return jsonify(high_product)
+
+#get the highest earning product
+@product_views.route('/products', methods=["GET"])
+@jwt_required()
+def display_highest_earning_product():
+    high_earning = highest_earning_product()
+    return jsonify(high_earning)
+
+#get the total sales by category
+@product_views.route('/products', methods=["GET"])
+@jwt_required()
+def display_total__sales_category():
+    total_category = total_sales_category()
+    return jsonify(total_category)
+

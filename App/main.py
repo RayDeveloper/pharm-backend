@@ -75,6 +75,7 @@ app.register_blueprint(auth_views)
 app.register_blueprint(search_view)
 app.register_blueprint(order_views)
 app.register_blueprint(customer_views)
+app.register_blueprint(analytics_views)
 
 jwt = JWT(app, authenticate, identity) 
 

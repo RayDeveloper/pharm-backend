@@ -20,7 +20,8 @@ from App.views import (
     auth_views,
     search_view,
     order_views,
-    customer_views
+    customer_views,
+    analytics_views,
 )
 
 #Google Firebase configuration file.

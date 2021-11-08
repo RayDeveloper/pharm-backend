@@ -8,7 +8,8 @@ get_monthly_sales,
 get_monthly_income,
 highest_selling_product,
 highest_earning_product,
-total_sales_category
+total_sales_category,
+
 )
 
 
@@ -17,7 +18,7 @@ total_sales_category
 @jwt_required()
 def display_monthly_sales():
     user_date = request.args.get('date')
-    salesList = get_monthly_sales(date)
+    salesList = get_monthly_sales(user_date)
     return jsonify(salesList)
 
 #get the monthly income
@@ -25,7 +26,7 @@ def display_monthly_sales():
 @jwt_required()
 def display_monthly_income():
     user_date = request.args.get('date')
-    incomeList = get_monthly_income(date)
+    incomeList = get_monthly_income(user_date)
     return jsonify(incomeList)
 
 #get the highest selling product

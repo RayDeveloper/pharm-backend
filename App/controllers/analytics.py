@@ -4,7 +4,6 @@ from App.models import ( Product )
 from App.models.database import db
 from flask import redirect, render_template, request, session, url_for
 from App.models import Product
-from App.models.database import db
 from App import parse
 from sqlalchemy import func
 

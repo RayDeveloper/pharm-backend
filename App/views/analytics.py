@@ -13,7 +13,6 @@ total_sales_category,
 )
 
 
-
 #get the monthly sales
 @analytics_views.route('/display_monthly_sales', methods=["GET"])
 @jwt_required()

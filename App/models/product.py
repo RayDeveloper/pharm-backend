@@ -31,5 +31,4 @@ class Product(db.Model):
             "image" : self.image,
             "slug" : self.product_name.lower().replace(' ', '-'),
             "orders": [OrderProduct.order.toDict() for OrderProduct in self.orders]
-            # uncomment for all orders containing the product "orders": [OrderProduct.order.toDict() for OrderProduct in self.orders]
         }

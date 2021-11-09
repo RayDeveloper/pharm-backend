@@ -1,5 +1,6 @@
 from flask import Blueprint, jsonify, request
 from flask_jwt import jwt_required
+import json
 
 analytics_views = Blueprint('analytics_views', __name__, template_folder='../templates')
 
@@ -11,7 +12,6 @@ highest_earning_product,
 total_sales_category,
 
 )
-
 
 #get the monthly sales
 @analytics_views.route('/display_monthly_sales', methods=["GET"])

@@ -28,7 +28,7 @@ def get_users():
     # get the order history for all users, even admins
 def get_users_orders_history():
     print('Get order history for users')
-    user_history = User.query.all
+    user_history = User.query.all()
     list_of_users = []
     if user_history:
         list_of_users = [c.toDict() for c in user_history]
